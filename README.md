@@ -10,9 +10,10 @@ https://apps.kde.org/kmahjongg/
 ## Odkazy pro vývoj
 
 Zde budou živé linky na:
-- figma návrh stránek aplikace
+- figma návrh stránek aplikace [zde](https://www.figma.com/file/2T2RMutLNCvh3XqcUGyRkk/React-Mahjongg?type=design&node-id=0%3A1&mode=design&t=lrKAVBGDwv8LTozW-1)
 - odkaz na gh-pages projektu
 - odkaz do repozitáře projektu, pokud pracuji v teamu a zde vývoj neprobíhá
+- Mahjong tiles used [riichi-mahjong-tiles](https://github.com/FluffyStuff/riichi-mahjong-tiles)
 
 ### Z čeho čerpat
 
