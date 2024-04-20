@@ -1,19 +1,15 @@
-# Mahjongg
+# Název mého projektu, programu, hry...
 
 ## Téma
-Mahjongg
-stejna funcionalita jako 
-https://apps.kde.org/kmahjongg/
-![image](https://github.com/pslib-cz/2023-p3a-mpa-react-project-ksald-CZ/assets/113503033/44203030-46f9-4df3-ae7f-b2084195eb9b)
 
+Tady bude krátký a úderný popis o účelu, významu, funkcionalitě...
 
 ## Odkazy pro vývoj
 
 Zde budou živé linky na:
-- figma návrh stránek aplikace [zde](https://www.figma.com/file/2T2RMutLNCvh3XqcUGyRkk/React-Mahjongg?type=design&node-id=0%3A1&mode=design&t=lrKAVBGDwv8LTozW-1)
+- figma návrh stránek aplikace
 - odkaz na gh-pages projektu
 - odkaz do repozitáře projektu, pokud pracuji v teamu a zde vývoj neprobíhá
-- Mahjong tiles used [riichi-mahjong-tiles](https://github.com/FluffyStuff/riichi-mahjong-tiles)
 
 ### Z čeho čerpat
 
