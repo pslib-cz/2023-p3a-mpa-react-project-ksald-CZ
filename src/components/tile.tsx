@@ -1,11 +1,11 @@
-
+import tileImages from "./import-tiles";
 interface Tile {
   id: number;
   image: string;
   matched: boolean;
 }
 
-const tileImages = [nan];
+
 
 export function generateTiles(): Tile[] {
   const tiles: Tile[] = [];

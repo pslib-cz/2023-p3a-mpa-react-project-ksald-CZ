@@ -1,5 +1,4 @@
-// Board.tsx
-// Board.tsx
+
 import React, { useState } from 'react';
 import Tile from './tile';
 
