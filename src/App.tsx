@@ -1,10 +1,12 @@
+// src/App.tsx
 import React from 'react';
-import Game from './game';
+import Board from './components/board';
+import './App.css';
 
 const App: React.FC = () => {
   return (
-    <div className="app">
-      <Game />
+    <div className="App">
+      <Board />
     </div>
   );
 };
