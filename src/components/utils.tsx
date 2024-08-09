@@ -1,12 +1,5 @@
 import { Tile } from '../GameContext';
-const images = [
-  'src/assets/tiles/chun.svg',
-  'src/assets/tiles/haku.svg',
-  'src/assets/tiles/hatsu.svg',
-  'src/assets/tiles/man1.svg',
-  'src/assets/tiles/man2.svg',
-  // add more images as needed
-];
+import images from './import-tiles';
 
 export const shuffleArray = <T,>(array: T[]): T[] => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -60,4 +53,4 @@ export const initializeTiles = (positions: { x: number; y: number; z: number }[]
   return tileArray;
 };
 
-export { images };
+

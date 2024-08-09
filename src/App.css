@@ -1,4 +1,10 @@
 /* src/Board.css */
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 .board {
   position: relative;
   width: 800px;

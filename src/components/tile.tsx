@@ -4,7 +4,7 @@ import  { GameContext } from '../GameContext';
 import '../App.css';
 
 
-import { images } from './utils';
+import images from './import-tiles';
 
 interface TileProps {
   id: number;
