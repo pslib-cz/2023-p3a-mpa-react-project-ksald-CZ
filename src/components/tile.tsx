@@ -1,9 +1,6 @@
-// src/Tile.tsx
 import React, { useContext } from 'react';
-import  { GameContext } from '../GameContext';
+import { GameContext } from '../GameContext';
 import '../App.css';
-
-
 import images from './import-tiles';
 
 interface TileProps {
@@ -14,23 +11,23 @@ interface TileProps {
 }
 
 const Tile: React.FC<TileProps> = ({ id, position, imageIndex, hasTileUnderneath }) => {
-  const { dispatch } = useContext(GameContext);
+  const { state, dispatch } = useContext(GameContext);
 
   const handleClick = () => {
     dispatch({ type: 'SELECT_TILE', payload: id });
   };
 
+  const isSelected = state.selectedTiles.includes(id);
+
   const style = {
-    left: `${position.x * 50}px`,
-    top: `${position.y * 70}px`,
-    zIndex: position.z,
-    position: 'absolute' as const,
-    boxShadow: hasTileUnderneath ? '0 4px 8px rgba(0, 0, 0, 0.6)' : 'none', // Apply shadow if tile has another tile underneath
+    left: `${position.x * 60}px`,
+    top: `${position.y * 80}px`,
+    zIndex: position.z * 10 + position.y,
+    border: isSelected ? '3px solid #FFD700' : 'none',
+    boxShadow: hasTileUnderneath ? '0 4px 8px rgba(0, 0, 0, 0.6)' : 'none',
   };
 
   const image = images[imageIndex];
-
-  console.log(`Tile ${id} at (${position.x}, ${position.y}, ${position.z}) using image ${image}`);
 
   return (
     <div className="tile" onClick={handleClick} style={style}>
@@ -39,4 +36,4 @@ const Tile: React.FC<TileProps> = ({ id, position, imageIndex, hasTileUnderneath
   );
 };
 
-export default Tile
+export default Tile;

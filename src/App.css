@@ -1,32 +1,73 @@
+
+
 /* src/Board.css */
-.App {
+
+/* src/Board.css */
+
+.board-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  
 }
+
 .board {
   position: relative;
-  width: 800px;
-  height: 600px;
-  background-color: #f0f0f0; /* Added background color for better visibility */
+  width: 750px;
+  height: 750px;
+  margin: auto;
+  background-color: white; /* Ensure background contrast */
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(15, 1fr);
 }
 
 /* src/Tile.css */
+
 .tile {
+  width: 60px;
+  height: 80px;
   position: absolute;
-  width: 50px;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
-  background-color: #ccc;
-  border: 2px solid #fff;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Add some depth */
+  border: 2px solid transparent; /* No border by default */
+}
+
+.tile.selected {
+  border-color: #FFD700; /* Highlight selected tile with a gold border */
 }
 
 .tile img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
+
+/* src/App.css */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
