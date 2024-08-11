@@ -20,7 +20,7 @@ export const generatePyramidPositions = (): { x: number; y: number; z: number }[
   ];
 
   layers.forEach((layer, z) => {
-    const { size, offsetX, offsetY } = layer;
+    const { size} = layer;
     for (let x = 0; x < size; x++) {
       for (let y = 0; y < size; y++) {
         positions.push({

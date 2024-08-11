@@ -23,7 +23,7 @@ const initialState: GameState = {
 
 type GameAction =
   | { type: 'SET_TILES'; payload: Tile[] }
-  | { type: 'SELECT_TILE'; payload: number; dispatch: Dispatch<GameAction> }
+  | { type: 'SELECT_TILE'; payload: number; dispatch: Dispatch<GameAction>; }
   | { type: 'REMOVE_TILES' }
   | { type: 'RESET_SELECTION' }
   | { type: 'RESET_GAME'; payload: Tile[] };

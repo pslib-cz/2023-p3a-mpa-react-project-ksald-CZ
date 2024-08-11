@@ -14,7 +14,7 @@ const Tile: React.FC<TileProps> = ({ id, position, imageIndex, hasTileUnderneath
   const { state, dispatch } = useContext(GameContext);
 
   const handleClick = () => {
-    dispatch({ type: 'SELECT_TILE', payload: id });
+    dispatch({ type: 'SELECT_TILE', payload: id, dispatch });
   };
 
   const isSelected = state.selectedTiles.includes(id);
