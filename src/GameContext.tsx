@@ -23,7 +23,8 @@ const initialState: GameState = {
 
 type GameAction =
   | { type: 'SET_TILES'; payload: Tile[] }
-  | { type: 'SELECT_TILE'; payload: number; dispatch: Dispatch<GameAction>; }
+  | { type: 'SELECT_TILE'; payload: number }
+  | { type: 'DESELECT_TILE'; payload: number }
   | { type: 'REMOVE_TILES' }
   | { type: 'RESET_SELECTION' }
   | { type: 'RESET_GAME'; payload: Tile[] };
@@ -35,37 +36,15 @@ const gameReducer = (state: GameState, action: GameAction): GameState => {
     case 'SET_TILES':
       return { ...state, tiles: action.payload, selectedTiles: [] };
     case 'SELECT_TILE': {
-      if (state.selectedTiles.includes(action.payload)) {
-        // Deselect the tile if it's already selected
-        return {
-          ...state,
-          selectedTiles: state.selectedTiles.filter(id => id !== action.payload),
-        };
+      if (state.selectedTiles.length === 2) {
+        // If there are already 2 selected tiles, ignore further selections
+        return state;
       }
 
-      const newSelectedTiles = [...state.selectedTiles, action.payload];
-
-      if (newSelectedTiles.length === 2) {
-        const [firstTileId, secondTileId] = newSelectedTiles;
-        const firstTile = state.tiles.find(tile => tile.id === firstTileId);
-        const secondTile = state.tiles.find(tile => tile.id === secondTileId);
-
-        if (firstTile && secondTile && firstTile.imageIndex === secondTile.imageIndex) {
-          // If they match, dispatch REMOVE_TILES action
-          return {
-            ...state,
-            tiles: state.tiles.filter(tile => !newSelectedTiles.includes(tile.id)),
-            selectedTiles: []
-          };
-        } else {
-          // If they don't match, reset selection after a delay
-          setTimeout(() => {
-            action.dispatch({ type: 'RESET_SELECTION' });
-          }, 1000);
-        }
-      }
-
-      return { ...state, selectedTiles: newSelectedTiles };
+      return { ...state, selectedTiles: [...state.selectedTiles, action.payload] };
+    }
+    case 'DESELECT_TILE': {
+      return { ...state, selectedTiles: state.selectedTiles.filter(id => id !== action.payload) };
     }
     case 'REMOVE_TILES': {
       return {

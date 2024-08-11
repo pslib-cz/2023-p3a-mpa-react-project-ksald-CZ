@@ -6,7 +6,7 @@ const LandingPage: React.FC = () => {
   return (
     <div style={{ textAlign: 'center', marginTop: '20vh' }}>
       <h1>Mahjong Game</h1>
-      <Link to="/game">
+      <Link to="/2023-p3a-mpa-react-project-ksald-CZ/game">
         <button style={{ padding: '10px 20px', fontSize: '16px' }}>Play Game</button>
       </Link>
     </div>

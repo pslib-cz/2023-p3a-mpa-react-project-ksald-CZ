@@ -14,7 +14,30 @@ const Tile: React.FC<TileProps> = ({ id, position, imageIndex, hasTileUnderneath
   const { state, dispatch } = useContext(GameContext);
 
   const handleClick = () => {
-    dispatch({ type: 'SELECT_TILE', payload: id, dispatch });
+    if (state.selectedTiles.includes(id)) {
+      // Deselect the tile if it's already selected
+      dispatch({ type: 'DESELECT_TILE', payload: id });
+    } else {
+      dispatch({ type: 'SELECT_TILE', payload: id });
+
+      if (state.selectedTiles.length === 1) {
+        const firstTileId = state.selectedTiles[0];
+        const firstTile = state.tiles.find(tile => tile.id === firstTileId);
+        const secondTile = state.tiles.find(tile => tile.id === id);
+
+        if (firstTile && secondTile && firstTile.imageIndex === secondTile.imageIndex) {
+          // If they match, remove the tiles after a short delay
+          setTimeout(() => {
+            dispatch({ type: 'REMOVE_TILES' });
+          }, 300);
+        } else {
+          // If they don't match, reset selection after a delay
+          setTimeout(() => {
+            dispatch({ type: 'RESET_SELECTION' });
+          }, 1000);
+        }
+      }
+    }
   };
 
   const isSelected = state.selectedTiles.includes(id);

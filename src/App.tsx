@@ -10,8 +10,8 @@ const App: React.FC = () => {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/game" element={<Game />} />
+          <Route path="/2023-p3a-mpa-react-project-ksald-CZ" element={<LandingPage />} />
+          <Route path="/2023-p3a-mpa-react-project-ksald-CZ/game" element={<Game />} />
         </Routes>
       </div>
     </Router>
